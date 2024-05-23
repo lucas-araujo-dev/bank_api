@@ -18,7 +18,7 @@ class Transaction < ApplicationRecord
     return if value.blank? || payment_type.blank?
 
     tax_calculator_class = TaxCalculatorFactory.create(payment_type)
-    self.value_with_tax = tax_calculator_class.calculate_value_with_tax(value)
+    self.value_with_tax = tax_calculator_class.calculate(value)
   end
 
   def value_must_be_less_than_balance
