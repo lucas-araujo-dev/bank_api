@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :accounts, only: %i[create show]
+  resources :accounts, only: %i[create show], param: :number
 end
