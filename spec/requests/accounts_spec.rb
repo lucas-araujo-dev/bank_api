@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Account' do
+RSpec.describe 'Accounts' do
   describe 'POST /accounts' do
     let(:params) { { account: { number: '123', balance: 100 } } }
     let(:do_request) { post accounts_path(params) }
