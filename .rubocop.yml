@@ -70,3 +70,6 @@ RSpec/MessageSpies:
 
 RSpec/MultipleMemoizedHelpers:
   Enabled: false
+
+RSpec/NamedSubject:
+  Enabled: false

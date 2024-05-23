@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe Transaction, type: :model do
+RSpec.describe Transaction do
   subject { build(:transaction) }
 
   describe 'validations' do
