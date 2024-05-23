@@ -85,6 +85,18 @@ RSpec.describe Transaction, type: :model do
         end
       end
     end
+
+    describe '#update_account_balance' do
+      before do
+        subject.account.balance = 100
+        subject.value = 10
+        subject.save
+      end
+
+      it 'updates account balance' do
+        expect(subject.account.balance).to eq(89.50)
+      end
+    end
   end
 
   describe 'transaction create' do

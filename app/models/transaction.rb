@@ -11,6 +11,7 @@ class Transaction < ApplicationRecord
   validate :value_must_be_less_than_balance
 
   before_validation :set_value_with_tax
+  after_create :update_account_balance
 
   private
 
@@ -26,5 +27,11 @@ class Transaction < ApplicationRecord
     return if value_with_tax.nil? || value_with_tax < account.balance
 
     errors.add(:value_with_tax, 'cannot be greater than balance')
+  end
+
+  def update_account_balance
+    new_balance = account.balance - value_with_tax
+
+    account.update!(balance: new_balance)
   end
 end
