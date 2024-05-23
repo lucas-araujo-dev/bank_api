@@ -39,6 +39,8 @@ gem 'bootsnap', require: false
 
 gem 'dotenv-rails'
 
+gem 'jbuilder'
+
 group :development, :test do
   gem 'rubocop'
   gem 'rubocop-rails'
