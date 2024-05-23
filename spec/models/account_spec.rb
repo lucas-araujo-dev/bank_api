@@ -6,7 +6,7 @@ RSpec.describe Account do
   subject { build(:account) }
 
   describe 'associations' do
-    it { is_expected.to have_many(:transactions) }
+    it { is_expected.to have_many(:transactions).dependent(:restrict_with_error) }
   end
 
   describe 'validations' do
